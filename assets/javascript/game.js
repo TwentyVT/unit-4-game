@@ -1,7 +1,4 @@
-window.onload = function () {
-    $("#usernumber").html(userGuess)
-
-}
+$(document).ready(function() {
 
 
 var blueCrystal = Math.floor(Math.random() * 12) + 5
@@ -11,32 +8,52 @@ var clearCrystal = Math.floor(Math.random() * 12) + 5
 var guessedNumber = Math.floor(Math.random() * 120) + 19
 var userGuess = 0;
 
+$("#usernumber").html(userGuess)
+
+$("#usernumber").html(guessedNumber)
+
+var crystalValue = ($(this).attr("data-crystalvalue"));
 console.log(blueCrystal)
 
-function bluePlus() {
-    $("#bluecrystal").click(userGuess + blueCrystal)
+$(".bluecrystal").on("click", function() {
+
+
+    userGuess = userGuess + blueCrystal;
     $("#usernumber").html(userGuess)
-}
+    console.log(userGuess)
+})
 
-function redPlus () {
+$(".redcrystal").on("click", function() {
 
-}
 
-function greenPlus () {
+    userGuess = userGuess + redCrystal;
+    $("#usernumber").html(userGuess)
+    console.log(userGuess)
+})
 
-}
+$(".greencrystal").on("click", function() {
 
-function clearPlus (){
 
-}
+    userGuess = userGuess + greenCrystal;
+    $("#usernumber").html(userGuess)
+    console.log(userGuess)
+})
 
-function reset () {
-    blueCrystal = Math.floor(Math.random() * 12) + 5
-    redCrystal = Math.floor(Math.random() * 12) + 5
-    greenCrystal =  Math.floor(Math.random() * 12) + 5 
-    clearCrystal = Math.floor(Math.random() * 12) + 5
-    guessedNumber = Math.floor(Math.random() * 120) + 19
-    userGuess = 0;
-}
+$(".clearcrystal").on("click", function() {
 
-bluePlus();
+
+    userGuess = userGuess + clearCrystal;
+    $("#usernumber").html(userGuess)
+    console.log(userGuess)
+})
+// function reset () {
+//     blueCrystal = Math.floor(Math.random() * 12) + 5
+//     redCrystal = Math.floor(Math.random() * 12) + 5
+//     greenCrystal =  Math.floor(Math.random() * 12) + 5 
+//     clearCrystal = Math.floor(Math.random() * 12) + 5
+//     guessedNumber = Math.floor(Math.random() * 120) + 19
+//     userGuess = 0;
+// }
+
+
+});
