@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Crytal Gamez</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
@@ -14,15 +15,29 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 
+    <div>
+        <p>Each crystal is worth a random number, try to get your number to match the other number to win!</p>
+    </div>
 
-    <div> <img src="assets/images/286547.jpg" height="200px" width="200px" class="bluecrystal"> </div>
-    <div> <img src="assets/images/286547.jpg" height="200px" width="200px" class="redcrystal"> </div>
-    <div> <img src="assets/images/286547.jpg" height="200px" width="200px" class="greencrystal"> </div>
-    <div> <img src="assets/images/286547.jpg" height="200px" width="200px" class="clearcrystal"> </div>
+    <br>
 
-    <p id="usernumber"></p>
+    <div class="guessstyle">
+        <strong>Guess!</strong> 
+        <p id="usernumber"></p>
+        <br>
+    </div>
+    <div class="guessstyle">
+        <strong>Number to match!</strong>
+        <p id="numbertoguess"></p>
+        <br>
+    </div>
 
-    <p id="numbertoguess"></p>
+    <div class="crystal"> <img src="assets/images/bluecrystal.jpg" height="200px" width="200px" class="bluecrystal"> </div>
+    <div class="crystal"> <img src="assets/images/redcrystal.jpg" height="200px" width="200px" class="redcrystal"> </div>
+    <div class="crystal"> <img src="assets/images/greencrystal.jpg" height="200px" width="200px" class="greencrystal"> </div>
+    <div class="crystal"> <img src="assets/images/clearcrystal.jpg" height="200px" width="200px" class="clearcrystal"> </div>
+
+
 
 
 </body>

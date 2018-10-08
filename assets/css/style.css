@@ -1,4 +1,9 @@
-div {
+div.crystal {
     float: left;
     padding: 20px;
+}
+
+.guessstyle {
+    float: left;
+    padding: 10px;
 }

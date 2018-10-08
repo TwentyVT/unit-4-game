@@ -14,6 +14,8 @@ $(document).ready(function () {
 
     console.log(blueCrystal)
 
+    function startUp() {
+
     $(".bluecrystal").on("click", function () {
 
 
@@ -21,10 +23,8 @@ $(document).ready(function () {
         $("#usernumber").html(userGuess)
         console.log(userGuess)
 
-        if (userGuess > guessedNumber) {
-            $("#usernumber").html("YOU LOSE!")
-            setTimeout(reset, 5000)
-        }
+        winLoseFunc()
+
     })
 
     $(".redcrystal").on("click", function () {
@@ -34,10 +34,8 @@ $(document).ready(function () {
         $("#usernumber").html(userGuess)
         console.log(userGuess)
 
-        if (userGuess > guessedNumber) {
-            $("#usernumber").html("YOU LOSE!")
-            setTimeout(reset, 5000)
-        }
+        winLoseFunc()
+        
     })
 
     $(".greencrystal").on("click", function () {
@@ -47,10 +45,9 @@ $(document).ready(function () {
         $("#usernumber").html(userGuess)
         console.log(userGuess)
 
-        if (userGuess > guessedNumber) {
-            $("#usernumber").html("YOU LOSE!")
-            setTimeout(reset, 5000)
-        }
+        winLoseFunc()
+
+        
     })
 
     $(".clearcrystal").on("click", function () {
@@ -59,12 +56,11 @@ $(document).ready(function () {
         userGuess = userGuess + clearCrystal;
         $("#usernumber").html(userGuess)
         console.log(userGuess)
+        winLoseFunc()
 
-        if (userGuess > guessedNumber) {
-            $("#usernumber").html("YOU LOSE!")
-            setTimeout(reset, 5000)
-        }
+
     })
+}
 
     function reset() {
         blueCrystal = Math.floor(Math.random() * 12) + 5
@@ -77,7 +73,33 @@ $(document).ready(function () {
         $("#usernumber").html(userGuess)
 
         $("#numbertoguess").html(guessedNumber)
+
+        startUp();
+
+    
     }
 
+    function winLoseFunc () {
 
+        if (userGuess > guessedNumber) {
+            $("#usernumber").html("YOU LOSE!")
+            $(".bluecrystal").off("click")
+            $(".redcrystal").off("click")
+            $(".greencrystal").off("click")
+            $(".clearcrystal").off("click")
+            setTimeout(reset, 5000)
+        }
+
+        if (userGuess === guessedNumber) {
+            $("#usernumber").html("YOU WIN!")
+            $(".bluecrystal").off("click")
+            $(".redcrystal").off("click")
+            $(".greencrystal").off("click")
+            $(".clearcrystal").off("click")
+            setTimeout(reset, 5000)
+        }
+
+    }
+    
+    startUp()
 });
